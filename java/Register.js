@@ -28,7 +28,7 @@ let success=document.getElementById("success")
 
 var psize=password.length
 
-var users=JSON.parse(localStorage.getItem("users")) 
+var users=JSON.parse(localStorage.getItem("users")) || []
 
 datatake=users.find(user=>user.email==email) 
 

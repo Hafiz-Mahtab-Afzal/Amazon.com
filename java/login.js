@@ -46,7 +46,7 @@ function  login (){
     var user_=localStorage.setItem(`is_user_logged` , JSON.stringify(loggeduser))
 
      setTimeout(function(){
-             location.href="Amazon.html"
+             location.href="index.html"
      },1000)
     }
 }
