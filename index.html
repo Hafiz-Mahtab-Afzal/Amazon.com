@@ -349,24 +349,22 @@
 
     <script>
 
-    var  is_user_logged=localStorage.getItem("is_user_logged")
+    var users = JSON.parse(localStorage.getItem("users") || "[]");
 
-    if(!is_user_logged){
-        location.href="Register.html?unauthorized"
+    if(users.length === 0){
+        window.location.href = "Register.html";
+    }
+
+    var is_user_logged = JSON.parse(localStorage.getItem("is_user_logged") || "null");
+    if(users.length > 0 && !is_user_logged){
+        window.location.href = "login.html";
     }
 
     function logout(){
-    localStorage.removeItem(`is_user_logged`)
-    location.href="login.html"
-}
-
-
-    // else {
-
-    // alert(is_user_logged.name);}
-
-
-    </script>
+        localStorage.removeItem("is_user_logged");
+        location.href = "login.html";
+    }
+</script>
 
 <script src="java/login.js"></script>
 
